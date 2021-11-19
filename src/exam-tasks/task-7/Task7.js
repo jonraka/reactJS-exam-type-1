@@ -1,11 +1,55 @@
 import React from 'react';
+import style from './Task7.module.css';
+import { useState, useRef } from 'react';
 
 function Task7() {
-  return (
-    <div>
-      <h3>Task 7</h3>
-    </div>
-  );
+    const [isDarkMode, toggleDarkMode] = useState(false);
+
+    //nezinau kur ta ref naudoti siame komponenete
+    const ref = useRef();
+    const onRefBtnClicked = () => {
+        if (ref.current) {
+            ref.current.style.backgroundColor = ref.current.style.backgroundColor === 'yellow' ? 'cyan' : 'yellow';
+        }
+    };
+
+    return (
+        <div className={isDarkMode ? style.dark_mode : style.light_mode}>
+            <div className={style.main}>
+                <h3>Task 7</h3>
+                <h1>Hello world</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium
+                    exercitationem commodi possimus vero natus corrupti sit aut fugiat excepturi,
+                    esse, iusto, velit laboriosam delectus dolorum. Labore nam quis libero iusto.
+                </p>
+                <div>
+                    <input
+                        type="button"
+                        value="Dark theme"
+                        className={style.black_btn}
+                        onClick={() => toggleDarkMode(true)}
+                        style={isDarkMode ? { color: 'red' } : null}
+                    />
+                    <input
+                        type="button"
+                        value="Light theme"
+                        className={style.white_btn}
+                        onClick={() => toggleDarkMode(false)}
+                        style={!isDarkMode ? { color: 'red' } : null}
+                    />
+                    {/* useless button for ref requirement */}
+                    <input
+                        type="button"
+                        value="Ref Button"
+                        ref={ref}
+                        className={style.white_btn}
+                        onClick={onRefBtnClicked}
+                    />
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default Task7;

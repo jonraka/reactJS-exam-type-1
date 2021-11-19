@@ -1,0 +1,39 @@
+.wrapper {
+    background-color: white;
+}
+
+.main {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.main h1 {
+    letter-spacing: 2px;
+}
+
+.cardsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 200px;
+    margin: 20px;
+}
+
+.card img {
+    width: 190px;
+    height: 190px;
+    background-color: #ffffff;
+}
+
+.card p {
+    margin: 20px 0 0 0;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}

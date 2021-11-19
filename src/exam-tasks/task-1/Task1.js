@@ -2,24 +2,27 @@ import React from 'react';
 import MainPage from './pages/MainPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactsPage from './pages/ContactsPage';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import style from './Task1.module.css';
 
 function Task1() {
     return (
         <div className={style.main}>
-            <h3>Task 2</h3>
+            <h3>Task 1</h3>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/">
+                    <Route path="task1/about" element={<AboutUsPage />} />
+                    <Route path="task1/contact" element={<ContactsPage />} />
+                    {/* <Route path="/">
                         <Route index element={<MainPage />} />
                         <Route path="task1">
                             <Route path="about" element={<AboutUsPage />} />
                             <Route path="contact" element={<ContactsPage />} />
                             <Route index element={<MainPage />} />
                         </Route>
-                    </Route>
-                    <Route
+                    </Route> */}
+                    <Route path="*" element={<MainPage />} />
+                    {/* <Route
                         path="*"
                         element={
                             <div>
@@ -27,7 +30,7 @@ function Task1() {
                                 <Link to="/">Go Home</Link>
                             </div>
                         }
-                    />
+                    /> */}
                 </Routes>
             </BrowserRouter>
         </div>
