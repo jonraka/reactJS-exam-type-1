@@ -6,7 +6,7 @@ import cupsImage from './images/cups.jpg';
 import postersImage from './images/posters.jpg';
 import stickersImage from './images/stickers.jpg';
 
-const carsData = [
+const cardsData = [
     [postersImage, 'POSTERS'],
     [apparelImage, 'APPAREL'],
     [stickersImage, 'STICKERS'],
@@ -30,7 +30,7 @@ function Task2() {
                 <h3>Task 2</h3>
                 <h1>CATEGORIES</h1>
                 <div className={style.cardsList}>
-                    {carsData.map(([image, description]) => (
+                    {cardsData.map(([image, description]) => (
                         <Card key={description} image={image} description={description} />
                     ))}
                 </div>

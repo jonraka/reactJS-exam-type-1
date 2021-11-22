@@ -1,15 +1,24 @@
 import React from 'react';
 import CompA from './CompA';
 import CompB from './CompB';
+import style from './Task8.module.css';
+import CounterContext, { CounterContextProvider } from './CounterContext';
 
 function Task8() {
-  return (
-    <div>
-      <h3>Task 8</h3>
-      {/*<CompA />*/}
-      {/*<CompB />*/}
-    </div>
-  );
+    return (
+        <CounterContextProvider>
+            <div className={style.wrapper}>
+                <div className={style.main}>
+                    <h3>Task 8</h3>
+                    <CompA />
+                    <CompB />
+                    <CounterContext.Consumer>
+                        {({ counterMessage }) => counterMessage}
+                    </CounterContext.Consumer>
+                </div>
+            </div>
+        </CounterContextProvider>
+    );
 }
 
 export default Task8;

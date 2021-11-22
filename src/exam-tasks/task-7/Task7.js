@@ -8,9 +8,8 @@ function Task7() {
     //nezinau kur ta ref naudoti siame komponenete
     const ref = useRef();
     const onRefBtnClicked = () => {
-        if (ref.current) {
-            ref.current.style.backgroundColor = ref.current.style.backgroundColor === 'yellow' ? 'cyan' : 'yellow';
-        }
+        const refBtnStyle = ref.current.style;
+        refBtnStyle.backgroundColor = refBtnStyle.backgroundColor === 'yellow' ? 'cyan' : 'yellow';
     };
 
     return (
@@ -29,14 +28,14 @@ function Task7() {
                         value="Dark theme"
                         className={style.black_btn}
                         onClick={() => toggleDarkMode(true)}
-                        style={isDarkMode ? { color: 'red' } : null}
+                        style={isDarkMode ? { textDecoration: 'underline' } : null}
                     />
                     <input
                         type="button"
                         value="Light theme"
                         className={style.white_btn}
                         onClick={() => toggleDarkMode(false)}
-                        style={!isDarkMode ? { color: 'red' } : null}
+                        style={!isDarkMode ? { textDecoration: 'underline' } : null}
                     />
                     {/* useless button for ref requirement */}
                     <input

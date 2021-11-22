@@ -1,0 +1,86 @@
+.wrapper {
+    background: rgb(243, 196, 39);
+    background: linear-gradient(
+        62deg,
+        rgba(243, 196, 39, 1) 3%,
+        rgba(243, 203, 39, 1) 22%,
+        rgba(246, 220, 35, 1) 35%,
+        rgba(243, 203, 39, 1) 35%,
+        rgba(255, 209, 0, 1) 51%,
+        rgba(255, 252, 22, 1) 51%,
+        rgba(255, 221, 22, 1) 61%,
+        rgba(255, 221, 22, 1) 66%,
+        rgba(250, 255, 22, 1) 66%,
+        rgba(255, 225, 22, 1) 74%
+    );
+}
+
+.main {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px 0;
+    min-height: 575px;
+}
+
+.main input {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.comp1,
+.comp2 {
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 10px;
+    padding: 10px;
+    border-top: 3px solid rgb(255, 0, 0);
+    border-left: 2px solid rgb(255, 0, 0);
+}
+
+.comp1 {
+    background-color: black;
+    color: white;
+}
+
+.comp1 input {
+    background-color: white;
+    color: black;
+}
+
+.comp1 input:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+.comp1 input:active {
+    background-color: rgb(167, 167, 167);
+}
+
+.comp1 input:disabled {
+    background-color: rgb(71, 71, 71);
+}
+
+.comp2 {
+    background-color: white;
+}
+
+.comp2 input {
+    background-color: black;
+    color: white;
+}
+
+.comp2 input:hover {
+    background-color: rgb(42, 42, 42);
+}
+
+.comp2 input:active {
+    background-color: rgb(80, 80, 80);
+}
+
+.comp2 input:disabled {
+    background-color: rgb(187, 187, 187);
+}

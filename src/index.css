@@ -8,6 +8,11 @@ body {
         'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: grey;
-    min-width: 300px;
+    background-color: rgb(0, 0, 0);
+    min-width: 360px;
+}
+
+hr {
+    border-color: aliceblue;
+    margin: 0;
 }

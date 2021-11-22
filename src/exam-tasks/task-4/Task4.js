@@ -1,22 +1,31 @@
 import React from 'react';
 import style from './Task4.module.css';
-import { useState } from 'react';
+import { useReducer } from 'react';
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'LIKE':
+            return { ...state, userLiked: true, userDisliked: false };
+        case 'DISLIKE':
+            return { ...state, userLiked: false, userDisliked: true };
+        default:
+            return state
+    }
+};
 
 function Task4() {
-    const [savedVotes] = useState({
+    const [state, dispatch] = useReducer(reducer, {
         likes: 15,
         dislikes: 14,
-    });
-    const [userVote, setUserVote] = useState({
-        likes: 0,
-        dislikes: 0,
+        userLiked: false,
+        userDisliked: false
     });
 
     const onVote = (e) => {
-        if (e.target.dataset.vote === 'like') {
-            setUserVote((s) => ({ likes: s.likes === 1 ? 0 : 1, dislikes: 0 }));
-        } else {
-            setUserVote((s) => ({ likes: 0, dislikes: s.dislikes === 1 ? 0 : 1 }));
+        if (e.target.dataset.vote === 'like' && !state.userLiked) {
+            dispatch({type: 'LIKE'})
+        } else if (e.target.dataset.vote === 'dislike' && !state.userDisliked) {
+            dispatch({type: 'DISLIKE'})
         }
     };
 
@@ -28,26 +37,26 @@ function Task4() {
                     <button
                         data-vote="like"
                         onClick={onVote}
-                        className={userVote.likes ? style.active : null}
+                        className={state.userLiked ? style.active : null}
                     >
                         <i
                             className={`fa fa-thumbs-up ${style.icon}`}
                             data-vote="like"
                             aria-hidden="true"
                         ></i>
-                        {savedVotes.likes + userVote.likes}
+                        {state.likes + Number(state.userLiked)}
                     </button>
                     <button
                         data-vote="dislike"
                         onClick={onVote}
-                        className={userVote.dislikes ? style.active : null}
+                        className={state.userDisliked ? style.active : null}
                     >
                         <i
                             className={`fa fa-thumbs-down ${style.icon}`}
                             data-vote="dislike"
                             aria-hidden="true"
                         ></i>
-                        {savedVotes.dislikes + userVote.dislikes}
+                        {state.dislikes + Number(state.userDisliked)}
                     </button>
                 </div>
             </div>

@@ -17,6 +17,10 @@ function Task3() {
                 lastname: lastNameRef.current.value,
                 age: ageRef.current.value,
             });
+
+            nameRef.current.value = '';
+            lastNameRef.current.value = '';
+            ageRef.current.value = '';
         }
     };
 
@@ -25,19 +29,27 @@ function Task3() {
             <div className={style.main}>
                 <h3>Task 3</h3>
                 <form onSubmit={onSubmit}>
-                    <input type="text" placeholder="Vardas" ref={nameRef} minLength="1" required />
+                    <input
+                        type="text"
+                        placeholder="Vardas"
+                        ref={nameRef}
+                        minLength="1"
+                        maxLength="50"
+                        required
+                    />
                     <input
                         type="text"
                         placeholder="Pavardė"
                         ref={lastNameRef}
                         minLength="1"
+                        maxLength="50"
                         required
                     />
                     <input
                         type="number"
                         placeholder="Amžius"
                         min="1"
-                        max="130"
+                        max="115"
                         ref={ageRef}
                         required
                     />
